@@ -19,8 +19,17 @@ Template.body.events({
   }
 });
 
+Template.sentences.helpers({
+  isSelected: function() {
+    return Session.get("sentenceSelected") === this._id;
+  }
+});
+
 Template.sentences.events({
   "click .delete": function () {
     Meteor.call("deleteSentences", this._id);
+  },
+  "click li": function () {
+    Session.set("sentenceSelected",this._id);
   }
 });
