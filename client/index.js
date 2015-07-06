@@ -11,7 +11,9 @@ Template.body.events({
   "submit .sentences-for-translate": function (event) {
     // This function is called when the new task form is submitted
     var text = event.target.text.value;
-    Meteor.call("addSentences", text);
+    var lang_in = event.target.lang_in.value;
+    var lang_out = event.target.lang_out.value;
+    Meteor.call("addSentences", text, lang_in,lang_out);
     // Clear form
     event.target.text.value = "";
     // Prevent default form submit
