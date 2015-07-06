@@ -41,7 +41,7 @@
 </body>
 
 <template name="sentences">
-  <li>
+  <li class="{{#if isSelected}}selected{{/if}}">
     <button class="delete">&times;</button>
     <span class="text">{{text}}</span>
   </li>
