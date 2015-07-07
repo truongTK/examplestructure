@@ -64,6 +64,21 @@ form {
   outline: 0;
 }
 
+.translate-a-sentence input {
+  box-sizing: border-box;
+  padding: 10px 0;
+  background: transparent;
+  border: none;
+  width: 100%;
+  padding-right: 80px;
+  font-size: 1em;
+  margin-left: 15px;
+}
+
+.translate-a-sentence input:focus{
+  outline: 0;
+}
+
 ul {
   margin: 0;
   padding: 0;

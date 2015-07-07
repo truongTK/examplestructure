@@ -1,13 +1,13 @@
 <!-- simple-todos.html -->
 <head>
   <title>Todo List </title>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.3&appId=1471294233164197";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.3&appId=1471294233164197";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
 </head>
 
 <body>
@@ -21,7 +21,7 @@
 
     <ul>
       {{#each Sentences}}
-        {{> sentences}}
+      {{> sentences}}
       {{/each}}
     </ul>
 
@@ -42,14 +42,40 @@
         <option>Japanese</option>
         <option>Vietnamese</option>
       </select>
-  </form>
+    </form>
 
+    {{#if isTranslate}}
+    {{> translate_sentence}}
+    {{/if}}
+
+    <ul>
+      {{#each Translate}}
+      {{> show_translate}}
+      {{/each}}
+    </ul>
   </div>
 </body>
 
 <template name="sentences">
   <li class="{{#if isSelected}}selected{{/if}}">
     <button class="delete">&times;</button>
-    <span class="text">{{text}}  {{lang_in}}  -> {{lang_out}}</span>
+    <span class="text">{{text}} </span> <span style="float:right"> {{lang_in}}  -> {{lang_out}}</span>
+  </li>
+</template>
+
+<template name="translate_sentence">
+  <br>
+  <br>
+  <span>Translate the sentence: {{translateSentence}}</span>
+  <form class="translate-a-sentence">
+    <input type="text" name="text" placeholder="Add a translate of sentence" />
+  </form>
+</template>
+
+<template name= "show_translate">
+  <br>
+  <li>
+    <span>{{showSentence}}</span>
+    <span> -> {{text}}</span>
   </li>
 </template>
