@@ -4,10 +4,10 @@ Meteor.subscribe("translate");
 
 Template.body.helpers({
   Sentences: function () {
-      return Sentences.find({}, {sort: {createdAt: -1}});
+    return Sentences.find({}, {sort: {createdAt: -1}});
   },
   Translate: function () {
-      return Translate.find({}, {sort: {createdAt: -1}});
+    return Translate.find({}, {sort: {createdAt: -1}});
   },
   isTranslate: function () {
     if (Session.get("sentenceSelected")===undefined) return false;
