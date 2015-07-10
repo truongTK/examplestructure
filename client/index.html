@@ -26,9 +26,9 @@
     </ul>
 
     <form class="sentences-for-translate">
-      <input type="text" name="text" placeholder="Add new sentence you want to translate" />
+      <input type="text" name="text" id ="inputsentence" placeholder="Add new sentence you want to translate" />
       <span> language input: </span>
-      <select name="lang_in">
+      <select name="lang_in" id="lang_in">
         <option>English</option>
         <option>French</option>
         <option>Japanese</option>
@@ -36,7 +36,7 @@
       </select>
       <br>
       <span> language output: </span>
-      <select name="lang_out">
+      <select name="lang_out" id="lang_out">
         <option>French</option>
         <option>English</option>
         <option>Japanese</option>
@@ -59,7 +59,7 @@
 <template name="sentences">
   <li class="{{#if isSelected}}selected{{/if}}">
     <button class="delete">&times;</button>
-    <span class="text">{{text}} </span> <span style="float:right"> {{lang_in}}  -> {{lang_out}}</span>
+    <span class="text" id="sentence">{{text}} </span> <span style="float:right" id="lang"> {{lang_in}}  -> {{lang_out}}</span>
   </li>
 </template>
 
