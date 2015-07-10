@@ -1,0 +1,14 @@
+<Template name="userlanguages">
+  <br>
+  <span>This is your first login:</span>
+  <br>
+  <select>
+    {{#each showLanguages}}
+      {{>languages}}
+    {{/each}}
+  </select>
+  <form class="appendForm">
+    <button type="button" name="button">Append this language to learn</button>
+    <button type="button" name="button">Append this language at fluent</button>
+  </form>
+</Template>
