@@ -74,14 +74,14 @@
   <br>
   <span>Translate the sentence: {{translateSentence}}</span>
   <form class="translate-a-sentence">
-    <input type="text" name="text" placeholder="Add a translate of sentence" />
+    <input type="text" name="text" id ="translateInput" placeholder="Add a translate of sentence" />
   </form>
 </template>
 
 <template name= "show_translate">
   <br>
   <li>
-    <span>{{showSentence}}</span>
-    <span> -> {{text}}</span>
+    <span id = "showSentence">{{showSentence}}</span>
+    <span id = "showTranslate"> -> {{text}}</span>
   </li>
 </template>
