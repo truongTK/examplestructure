@@ -1,4 +1,5 @@
 Meteor.subscribe("userlanguages");
+Session.set("languageSelected", null);
 
 Template.body.helpers({
   isFirstLogin: function () {
@@ -20,15 +21,47 @@ Template.body.helpers({
     return false;
   }
 });
+Template.userlanguages.events({
+  appendLanguage: function (languageId, type) {
+    Meteor.call(userAppendLanguage, languageId, type);
+  },
 
-Template.userlanguages.helpers({
-  showLanguages: function () {
-    return Languages.find();
+  "click #button-learn-append": function (event) {
+    if(Meteor.userId()){
+      if(Session.get("languageSelected") == null){
+        Session.set("languageSelected", Languages.find().fetch()[0]._id);
+      }
+      Meteor.call("userAppendLanguage", Session.get("languageSelected"), "study");
+    }
+
+  },
+
+  "click #button-fluent-append": function (event) {
+    if(Meteor.userId()){
+      if(Session.get("languageSelected") == null){
+        Session.set("languageSelected", Languages.find().fetch()[0]._id);
+      }
+      Meteor.call("userAppendLanguage", Session.get("languageSelected"), "fluent");
+    }
   }
 });
-
-Template.userlanguages.events({
-  appendLanguage: function (languageId) {
-    Meteor.call(userAppendLanguage, languageId);
+Template.userlanguages.helpers({
+  showStudyProfile: function () {
+    var arrLanguageId = []
+    var study_languages =  UserLanguages.find({"userId":Meteor.userId(), "type":"study"}).fetch();
+    for (var i = 0; i < study_languages.length; i++) {
+      arrLanguageId.push(study_languages[i].languageId);
+    }
+    var arrLang = Languages.find({"_id":{ $in : arrLanguageId }});
+    return arrLang;
+  },
+  showFluentProfile: function () {
+    var arrLanguageId = []
+    var study_languages =  UserLanguages.find({"userId":Meteor.userId(), "type":"fluent"}).fetch();
+    for (var i = 0; i < study_languages.length; i++) {
+      arrLanguageId.push(study_languages[i].languageId);
+    }
+    var arrLang = Languages.find({"_id":{ $in : arrLanguageId }});
+    return arrLang;
   }
 });

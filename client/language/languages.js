@@ -9,14 +9,12 @@ Template.languages.helpers({
   },
   deleteLanguage: function (languageId) {
     Languages.remove(languageId);
-  }
-});
-
-Template.body.helpers({
+  },
   showLanguages: function () {
     return Languages.find();
   }
 });
+
 Template.body.events({
   "submit .master-language": function (event) {
     // This function is called when the new task form is submitted
@@ -25,6 +23,13 @@ Template.body.events({
     event.target.text.value = "";
   },
   "click .clear": function (event) {
-  Meteor.call("removeLanguage");
+    Meteor.call("removeLanguage");
+  }
+});
+
+Template.languages.events({
+  "click .select-language": function (event) {
+    var curLangId = $(event.target).val();
+    Session.set("languageSelected",curLangId);
   }
 });

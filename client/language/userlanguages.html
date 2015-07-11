@@ -2,13 +2,22 @@
   <br>
   <span>This is your first login:</span>
   <br>
-  <select>
-    {{#each showLanguages}}
-      {{>languages}}
-    {{/each}}
-  </select>
+  {{>languages}}
   <form class="appendForm">
-    <button type="button" name="button">Append this language to learn</button>
-    <button type="button" name="button">Append this language at fluent</button>
+    <button id="button-learn-append" type="button" name="button">Append this language to learn</button>
+    <button id="button-fluent-append" type="button" name="button">Append this language at fluent</button>
   </form>
+  <br>
+  <span>The languages you want to learn:</span>
+  <ul style="list-style-type:disc" class="profile-study">
+    {{#each showStudyProfile}}
+    <li>{{text}}</li>
+    {{/each}}
+  </ul>
+  <span>The languages you at fluent:</span>
+  <ul style="list-style-type:disc" class="profile-fluent">
+    {{#each showFluentProfile}}
+    <li>{{text}}</li>
+    {{/each}}
+  </ul>
 </Template>

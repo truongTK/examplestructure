@@ -46,18 +46,10 @@
       {{> show_translate}}
       {{/each}}
     </ul>
-    <form class="master-language">
-        <input type="text" name="text" placeholder="Add a language to DB" />
-    </form>
     <br>
-    <select>
-      {{#each showLanguages}}
-        {{>languages}}
-      {{/each}}
-    </select>
-    {{#if isFirstLogin}}
-      {{>userlanguages}}
-    {{/if}}
+
+    {{>userlanguages}}
+
   </div>
 
 </body>
