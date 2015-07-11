@@ -1,4 +1,4 @@
-Feature: Translate a sentences
+Feature: TRANSLATE A SENTENCE
   As a user,
   I want to choose a sentence to translate
   So that I can put my own translation for that sentence.

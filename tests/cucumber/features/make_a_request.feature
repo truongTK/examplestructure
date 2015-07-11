@@ -1,4 +1,4 @@
-Feature: Make a sentence which user wants it to be tranlated
+Feature: MAKE A SENTENCE WHICH IS NEEDED TO TRANSLATE
   As a user,
   I want to input a sentence in the language of my choice
   and ask for it to be translated to another language of my choice
