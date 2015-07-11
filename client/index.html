@@ -11,9 +11,17 @@
     <header>
       <h1>Welcome to Social Lingu</h1>
       {{> loginButtons}}
+      {{>profileButton}}
     </header>
-
+    {{#if isFirstLogin}}
+    <h4>This is your first login? Touch "Your profile" to update it.</h4>
+    {{/if}}
     {{#if currentUser}}
+    {{#if showProfile}}
+    <div>
+    {{>userlanguages}}
+  </div>
+    {{else}}
     <div>
       <ul>
         {{#each Sentences}}
@@ -54,8 +62,9 @@
         {{/each}}
       </ul>
       <br>
-      {{>userlanguages}}
     </div>
+    <br/>
+    {{/if}}
     {{/if}}
   </div>
 </body>

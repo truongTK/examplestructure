@@ -43,6 +43,9 @@ Template.userlanguages.events({
       }
       Meteor.call("userAppendLanguage", Session.get("languageSelected"), "fluent");
     }
+  },
+  "click #back-button": function (event) {
+    Session.set("profileClicked", false);
   }
 });
 Template.userlanguages.helpers({

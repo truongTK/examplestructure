@@ -1,23 +1,24 @@
 <Template name="userlanguages">
-  <br>
-  <span>This is your first login:</span>
+  <br/>
+  <span>Please choose one language:</span>
   <br>
   {{>languages}}
   <form class="appendForm">
     <button id="button-learn-append" type="button" name="button" class="btn btn-primary">Append this language to learn</button>
     <button id="button-fluent-append" type="button" name="button" class="btn btn-warning">Append this language at fluent</button>
   </form>
-  <br>
-  <span>The languages you want to learn:</span>
-  <ul style="list-style-type:disc" class="profile-study">
+  <br/>
+  <h3>The languages you want to learn:</h3>
+  <ul style="list-style-type:disc" class="list-group">
     {{#each showStudyProfile}}
-    <li>{{text}}</li>
+    <li class="list-group-item list-group-item-info">>{{text}}</li>
     {{/each}}
   </ul>
-  <span>The languages you at fluent:</span>
-  <ul style="list-style-type:disc" class="profile-fluent">
+  <h3>The languages you at fluent:</h3>
+  <ul style="list-style-type:disc" class="list-group">
     {{#each showFluentProfile}}
-    <li>{{text}}</li>
+    <li class="list-group-item list-group-item-success">{{text}}</li>
     {{/each}}
   </ul>
+  <button id="back-button" type="button" name="button" class="btn btn-info">Back</button>
 </Template>
