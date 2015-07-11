@@ -1,4 +1,4 @@
-Feature: One-liner description of this feature
+Feature: Sign up and sign in test.
 
   As a user
   I want to be able to register or choose Facebook/Google/Tweeter credential
@@ -17,12 +17,12 @@ Feature: One-liner description of this feature
 
   # This scenario will run as part of the Meteor dev cycle because it has the @dev tag
   @dev
-  Scenario: As a new user, i want to create an account
+  Scenario: As a new user.
     When I create account with "test@twin.vn" as username and "123456" as password
     Then I login with account just created
     And I click sign out button
 
   @dev
-  Scenario: As a facebooker
+  Scenario: As a new user had facebook account.
     When I click Sign in with Facebook
     Then I login with my Facebook account
