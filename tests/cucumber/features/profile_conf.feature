@@ -9,13 +9,12 @@ Feature: ADD PROFILE
 
   # This scenario will run as part of the Meteor dev cycle because it has the @dev tag
   @dev
-  @dev
   Scenario: As a new user, i want to create an account
     When I create account with "test@twin.vn" as username and "123456" as password
     And I login with account just created
     And Click button "profile-button"
     And Add language to learn "English"
     And Add Language fluently "Vietnamese"
-    Then Test language to learn
-    And Test language fluently
-    And Click button back-button
+    Then Check Language to learn is "English"
+    And Check Language fluently "Vietnamese"
+    And Click button "back-button"

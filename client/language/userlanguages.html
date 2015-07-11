@@ -11,13 +11,13 @@
   <h3>The languages you want to learn:</h3>
   <ul style="list-style-type:disc" class="list-group">
     {{#each showStudyProfile}}
-    <li class="list-group-item list-group-item-info">>{{text}}</li>
+    <li class="list-group-item list-group-item-info" id="language-to-learn">{{text}}</li>
     {{/each}}
   </ul>
   <h3>The languages you at fluent:</h3>
   <ul style="list-style-type:disc" class="list-group">
     {{#each showFluentProfile}}
-    <li class="list-group-item list-group-item-success">{{text}}</li>
+    <li class="list-group-item list-group-item-success" id = "language-at-fluent">{{text}}</li>
     {{/each}}
   </ul>
   <button id="back-button" type="button" name="button" class="btn btn-info">Back</button>
