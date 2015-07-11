@@ -1,8 +1,8 @@
 Feature: One-liner description of this feature
 
-  As a [role]
-  I want [feature]
-  So that [benefit]
+  As a user
+  I want to be able to register or choose Facebook/Google/Tweeter credential
+  So that I can log in
 
   The story above is to set context for the reader. It doesn't actually have any impact on the test
   itself. The phrases inside the scenarios are ties to test code using regex, which you can see in

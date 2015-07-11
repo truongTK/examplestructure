@@ -12,46 +12,51 @@
       {{> loginButtons}}
     </header>
 
-    <ul>
-      {{#each Sentences}}
-      {{> sentences}}
-      {{/each}}
-    </ul>
+    {{#if currentUser}}
+    <div>
+      <ul>
+        {{#each Sentences}}
+        {{> sentences}}
+        {{/each}}
+      </ul>
 
-    <form class="sentences-for-translate">
-      <input type="text" name="text" id ="inputsentence" placeholder="Add new sentence you want to translate" />
-      <span> language input: </span>
-      <select name="lang_in" id="lang_in">
-        <option>English</option>
-        <option>French</option>
-        <option>Japanese</option>
-        <option>Vietnamese</option>
-      </select>
+      <form class="sentences-for-translate">
+        <input type="text" name="text" id ="inputsentence" placeholder="Add new sentence you want to translate" />
+        <span> language input: </span>
+        <select name="lang_in" id="lang_in">
+          <option>English</option>
+          <option>French</option>
+          <option>Japanese</option>
+          <option>Vietnamese</option>
+        </select>
+        <br>
+        <span> language output: </span>
+        <select name="lang_out" id="lang_out">
+          <option>French</option>
+          <option>English</option>
+          <option>Japanese</option>
+          <option>Vietnamese</option>
+        </select>
+      </form>
+
+      {{#if isTranslate}}
+      {{> translate_sentence}}
+      {{/if}}
+      <ul>
+        {{#each Translate}}
+        {{> show_translate}}
+        {{/each}}
+      </ul>
+      <ul>
+        {{#each Translate}}
+        {{> show_translate}}
+        {{/each}}
+      </ul>
       <br>
-      <span> language output: </span>
-      <select name="lang_out" id="lang_out">
-        <option>French</option>
-        <option>English</option>
-        <option>Japanese</option>
-        <option>Vietnamese</option>
-      </select>
-    </form>
-
-    {{#if isTranslate}}
-    {{> translate_sentence}}
+      {{>userlanguages}}
+    </div>
     {{/if}}
-
-    <ul>
-      {{#each Translate}}
-      {{> show_translate}}
-      {{/each}}
-    </ul>
-    <br>
-
-    {{>userlanguages}}
-
   </div>
-
 </body>
 
 <template name="sentences">

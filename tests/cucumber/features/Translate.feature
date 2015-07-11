@@ -1,4 +1,4 @@
-Feature: One-liner description of this feature
+Feature: Translate a sentences
   As a user,
   I want to choose a sentence to translate
   So that I can put my own translation for that sentence.
@@ -7,9 +7,8 @@ Feature: One-liner description of this feature
   Background:
     Given I am a user
 
-  # This scenario will run as part of the Meteor dev cycle because it has the @dev tag
   @dev
-  Scenario: This scenario will run on both dev and CI
+  Scenario:
     When select the the sentence "Try my best"
     And input the translate "Co len nao"
     And submit translate

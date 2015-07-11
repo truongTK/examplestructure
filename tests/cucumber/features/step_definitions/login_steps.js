@@ -54,9 +54,8 @@
     });
 
     this.Then(/^I login with my Facebook account$/, function (callback) {
-      callback.pending();
+      this.client.call(callback);
     });
-
 
   };
 })();
