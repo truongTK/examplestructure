@@ -21,7 +21,7 @@ ServiceConfiguration.configurations.upsert(
 );
 
 ServiceConfiguration.configurations.upsert(
-  { service: "tweeter" },
+  { service: "twitter" },
   {
     $set: {
       clientId: "dlwJQlogDgqgtBfZzemuKEydF",

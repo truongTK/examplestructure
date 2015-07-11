@@ -1,7 +1,7 @@
 <Template name="languages">
-  <select class="select-language">
+  <select id="select-language" class="form-control">
     {{#each showLanguages}}
-    <option value="{{_id}}">{{text}}</option>
+    <option value={{_id}}>{{text}}</option>
     {{/each}}
   </select>
 </Template>

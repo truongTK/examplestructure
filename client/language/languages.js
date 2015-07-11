@@ -28,7 +28,7 @@ Template.body.events({
 });
 
 Template.languages.events({
-  "click .select-language": function (event) {
+  "click #select-language": function (event) {
     var curLangId = $(event.target).val();
     Session.set("languageSelected",curLangId);
   }
