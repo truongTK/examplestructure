@@ -1,4 +1,4 @@
-Feature: One-liner description of this feature
+Feature: Make a sentence which user wants it to be tranlated
   As a user,
   I want to input a sentence in the language of my choice
   and ask for it to be translated to another language of my choice
@@ -10,7 +10,7 @@ Feature: One-liner description of this feature
 
   # This scenario will run as part of the Meteor dev cycle because it has the @dev tag
   @dev
-  Scenario: This scenario will run on both dev and CI
+  Scenario:
     When input sentence "Try my best"
     And input language from "English"
     And input language to "Vietnamese"
@@ -18,9 +18,10 @@ Feature: One-liner description of this feature
     Then I see the request "Try my best" "English" "Vietnamese"
 
   Background:
-    Given had inputed 
+    Given had inputed
+
     @dev
-    Scenario: This scenario will run on both dev and CI
+    Scenario:
       When input sentence "Cố lên"
       And input language from "Vietnamese"
       And input language to "French"

@@ -9,12 +9,16 @@ var assert = require('assert');
 
   module.exports = function () {
     this.Given(/^I am a user$/, function (callback) {
-      // Write code here that turns the phrase above into concrete actions
       this.server.call('reset');
       this.client
       .url(process.env.ROOT_URL)
       .waitForExist('body *')
       .waitForVisible('body *')
+      .click('#login-sign-in-link')
+      .click('#signup-link')
+      .setValue('#login-email', 'test@twin.vn')
+      .setValue('#login-password', '123456')
+      .click('#login-buttons-password')
       .call(callback);
     });
 

@@ -12,54 +12,57 @@
       {{> loginButtons}}
     </header>
 
-    <ul>
-      {{#each Sentences}}
-      {{> sentences}}
-      {{/each}}
-    </ul>
+    {{#if currentUser}}
+    <div>
+      <ul>
+        {{#each Sentences}}
+        {{> sentences}}
+        {{/each}}
+      </ul>
 
-    <form class="sentences-for-translate">
-      <input type="text" name="text" id ="inputsentence" placeholder="Add new sentence you want to translate" />
-      <span> language input: </span>
-      <select name="lang_in" id="lang_in">
-        <option>English</option>
-        <option>French</option>
-        <option>Japanese</option>
-        <option>Vietnamese</option>
-      </select>
-      <br>
-      <span> language output: </span>
-      <select name="lang_out" id="lang_out">
-        <option>French</option>
-        <option>English</option>
-        <option>Japanese</option>
-        <option>Vietnamese</option>
-      </select>
-    </form>
+      <form class="sentences-for-translate">
+        <input type="text" name="text" id ="inputsentence" placeholder="Add new sentence you want to translate" />
+        <span> language input: </span>
+        <select name="lang_in" id="lang_in">
+          <option>English</option>
+          <option>French</option>
+          <option>Japanese</option>
+          <option>Vietnamese</option>
+        </select>
+        <br>
+        <span> language output: </span>
+        <select name="lang_out" id="lang_out">
+          <option>French</option>
+          <option>English</option>
+          <option>Japanese</option>
+          <option>Vietnamese</option>
+        </select>
+      </form>
 
-    {{#if isTranslate}}
-    {{> translate_sentence}}
-    {{/if}}
+      {{#if isTranslate}}
+      {{> translate_sentence}}
+      {{/if}}
 
-    <ul>
-      {{#each Translate}}
-      {{> show_translate}}
-      {{/each}}
-    </ul>
-    <form class="master-language">
+      <ul>
+        {{#each Translate}}
+        {{> show_translate}}
+        {{/each}}
+      </ul>
+      <form class="master-language">
         <input type="text" name="text" placeholder="Add a language to DB" />
-    </form>
-    <br>
-    <select>
-      {{#each showLanguages}}
+      </form>
+      <br>
+      <select>
+        {{#each showLanguages}}
         {{>languages}}
-      {{/each}}
-    </select>
-    {{#if isFirstLogin}}
+        {{/each}}
+      </select>
+      {{#if isFirstLogin}}
       {{>userlanguages}}
+      {{/if}}
+    </div>
     {{/if}}
   </div>
-
 </body>
 
 <template name="sentences">
