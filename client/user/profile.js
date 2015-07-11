@@ -16,3 +16,18 @@ Template.body.helpers({
     return false;
   }
 });
+
+Template.analytics.helpers({
+  userCount: function () {
+    var arrUsers = Meteor.users.find().fetch();
+    return arrUsers.length;
+  },
+  sentenceCount: function () {
+    var arrSentences = Sentences.find().fetch();
+    return arrSentences.length;
+  },
+  translateCount: function () {
+    var arrTranslate = Translate.find().fetch();
+    return arrTranslate.length;
+  }
+});
