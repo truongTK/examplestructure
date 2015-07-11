@@ -10,6 +10,14 @@ Template.body.helpers({
     else {
       return false;
     }
+  },
+
+  isLogin: function () {
+    if(Meteor.userId())
+    {
+      return true;
+    }
+    return false;
   }
 });
 
