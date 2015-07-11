@@ -1,4 +1,4 @@
-Feature: One-liner description of this feature
+Feature: test login feature
 
   As a user
   I want to be able to register or choose Facebook/Google/Tweeter credential
