@@ -9,7 +9,7 @@ var assert = require('assert');
 
     this.When(/^select the the sentence "([^"]*)"$/, function (arg1, callback) {
       this.client
-      .click('#sentence')
+      .click('#sentence')//Try to find element with have text: Try my best
       .call(callback);
     });
 
